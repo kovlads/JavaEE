@@ -1,0 +1,7 @@
+13:26:09,291 INFO  [org.jboss.as.repository] (management-handler-thread - 3) WFLYDR0001: Content added at location C:\wildfly-22.0.0.Final\standalone\data\content\d2\b821558d1e5718c1441358c5ecdad3769b40f3\content
+13:26:09,304 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "first-web-app.war" (runtime-name: "first-web-app.war")
+13:26:09,790 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 91) WFLYUT0021: Registered web context: '/first-web-app' for server 'default-server'
+13:26:10,012 INFO  [org.jboss.as.server] (management-handler-thread - 3) WFLYSRV0010: Deployed "first-web-app.war" (runtime-name : "first-web-app.war")
+13:29:54,154 INFO  [ru.geekbrains.FirstServlet] (default task-1) FirstServlet is initialized
+13:29:54,156 INFO  [ru.geekbrains.FirstServlet] (default task-1) New request to FirstServlet
+13:30:28,955 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 41) WFLYDR0009: Content C:\wildfly-22.0.0.Final\standalone\data\content\20\26dec555ea36576addf7db773fe1d12aaa486e is obsolete and will be removed
