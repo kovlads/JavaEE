@@ -9,9 +9,20 @@
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>ru.geekbrains.FirstServlet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/first-servlet</url-pattern>
     </servlet-mapping>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error_servlet</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_servlet</location>
+    </error-page>
+
 </web-app>

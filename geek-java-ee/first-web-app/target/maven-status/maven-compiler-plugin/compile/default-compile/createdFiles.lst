@@ -1,1 +1,9 @@
+ru\geekbrains\ErrorServlet.class
+ru\geekbrains\OrderServlet.class
+ru\geekbrains\CartServlet.class
+ru\geekbrains\MainServlet.class
+ru\geekbrains\PageHeaderServlet.class
+ru\geekbrains\ProductServlet.class
 ru\geekbrains\FirstServlet.class
+ru\geekbrains\CatalogServlet.class
+ru\geekbrains\filter\EncodingFilter.class
