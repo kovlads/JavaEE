@@ -2,7 +2,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui">
 
 <h:head>
     <!-- Required meta tags -->
@@ -27,6 +28,9 @@
         <div class="row py-2">
             <div class="col-12">
                 <h:form>
+                    <p>
+                        <b>Last selected item:</b> <h:outputText id="selected_item" value="#{productController.product.category.id}" />
+                    </p>
                     <input type="hidden" id="id" name="id"/>
                     <div class="form-group">
                         <label>Name</label>
@@ -34,6 +38,20 @@
                                      value="#{productController.product.name}"
                                      placeholder="Enter name"/>
                     </div>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="typeSelection" value="Category" />
+                        <h:selectOneMenu id="typeSelection" value="#{productController.product.category}"
+                                         converter="omnifaces.SelectItemsConverter">
+                            <f:selectItem itemLabel="Choose item" noSelectionOption="true" />
+                            <f:selectItems value="#{categoryController.allCategories}"
+                                           var="category" itemLabel="#{category.name}"
+                                           itemValue="#{category}"
+                            />
+
+                        </h:selectOneMenu>
+
+
+                    </h:panelGrid>
                     <div class="form-group">
                         <label>Description</label>
                         <h:inputText styleClass="form-control" id="description"

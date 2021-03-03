@@ -1,0 +1,12 @@
+# 1. creating datasource section in standalone.xml config
+data-source add \
+   --jndi-name=java:jboss/datasources/ShopDS \
+   --name=ShopDS \
+   --connection-url=jdbc:postgresql://localhost:5432/shopdb?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC \
+   --driver-name=postgres \
+   --user-name=postgres \
+   --password=postgres
+
+# 2. restarting Wildfly server
+:reload
+

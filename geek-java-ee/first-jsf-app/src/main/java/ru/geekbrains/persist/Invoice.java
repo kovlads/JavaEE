@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="categories")
+@Table(name="invoice")
 @NamedQueries({
-        @NamedQuery(name = "findAllCategory", query = "from Category"),
-        @NamedQuery(name = "findCategoryById", query = "from Category c  where c.id = :id"),
-        @NamedQuery(name = "countAllCategory", query = "select count(*) from Category "),
-        @NamedQuery(name = "deleteByIdCategory", query = "delete from Category c where c.id = :id")
+        @NamedQuery(name = "findAllInvoice", query = "from Invoice"),
+        @NamedQuery(name = "findInvoiceById", query = "from Invoice c  where c.id = :id"),
+        @NamedQuery(name = "countAllInvoice", query = "select count(*) from Invoice "),
+        @NamedQuery(name = "deleteByIdInvoice", query = "delete from Invoice c where c.id = :id")
 
 })
-public class Category {
+public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,14 +25,14 @@ public class Category {
     @Column(length = 1024)
     private String description;
 
-    @OneToMany(mappedBy = "category", orphanRemoval = true)
-    private List<Product> products = new ArrayList<Product>();
+    @OneToMany(mappedBy = "invoice", orphanRemoval = true)
+    private List<InvoiceItem> invoiceItems = new ArrayList<InvoiceItem>();
 
-    public Category() {
+    public Invoice() {
     }
 
 
-    public Category(Long id, String name, String description) {
+    public Invoice(Long id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -46,12 +46,12 @@ public class Category {
         this.id = id;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<InvoiceItem> getInvoiceItems() {
+        return invoiceItems;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setInvoiceItems(List<InvoiceItem> invoiceItems) {
+        this.invoiceItems = invoiceItems;
     }
 
 
@@ -73,8 +73,8 @@ public class Category {
 
     @Override
     public boolean equals(Object other) {
-        return (other instanceof Category) && (id != null)
-                ? id.equals(((Category) other).id)
+        return (other instanceof Invoice) && (id != null)
+                ? id.equals(((Invoice) other).id)
                 : (other == this);
     }
 
@@ -87,7 +87,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return String.format("Category[%d, %s]", id, name);
+        return String.format("Invoice[%d, %s]", id, name);
     }
 
 }
